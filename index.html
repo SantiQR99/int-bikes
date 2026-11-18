@@ -110,6 +110,16 @@
                 readonly
               />
             </div>
+            <div class="stat">
+              <label class="form-label" for="inp-total-late-fees">Recargos por Atraso</label>
+              <input
+                class="form-control-plaintext"
+                id="inp-total-late-fees"
+                type="text"
+                value="0"
+                readonly
+              />
+            </div>
           </div>
         </section>
 
@@ -179,6 +189,15 @@
               />
             </div>
             <div class="col-md-6">
+              <label class="form-label" for="inp-hours-late">Horas de atraso</label>
+              <input
+                class="form-control"
+                id="inp-hours-late"
+                type="number"
+                min="0"
+              />
+            </div>
+            <div class="col-md-6">
               <label class="form-label" for="inp-price">Precio por hora</label>
               <input
                 class="form-control"
@@ -187,6 +206,7 @@
                 min="0"
               />
             </div>
+            
           </div>
           <button class="btn btn-primary mt-4" id="btn-add" type="button">
             Agregar

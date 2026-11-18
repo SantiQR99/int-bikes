@@ -14,6 +14,7 @@ describe("RentalList", () => {
       bikeType: "urban",
       hours: 3,
       pricePerHour: 100,
+      lateHours: 0,
     });
   });
 

@@ -4,7 +4,8 @@
     "bikeCode": "B-101",
     "bikeType": "urban",
     "hours": 2,
-    "pricePerHour": 150
+    "pricePerHour": 150,
+    "lateHours": 0
   },
   {
     "customer": "Pablo Cabrera",
@@ -27,13 +28,15 @@
     "bikeCode": "B-112",
     "bikeType": "urban",
     "hours": 1,
-    "pricePerHour": 150
+    "pricePerHour": 150,
+    "lateHours": 0
   },
   {
     "customer": "Valentina Rey",
     "bikeCode": "B-220",
     "bikeType": "mountain",
     "hours": 6,
-    "pricePerHour": 200
+    "pricePerHour": 200,
+    "lateHours": 0
   }
 ]

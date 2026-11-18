@@ -12,6 +12,7 @@ describe("Rental", () => {
       bikeType: "urban",
       hours: 3,
       pricePerHour: 100,
+      lateHours: 0,
     });
   });
 
@@ -33,6 +34,10 @@ describe("Rental", () => {
 
   test("store price per hour", () => {
     expect(rental.pricePerHour).toBe(100);
+  });
+
+  test("default latehours should be 0", () => {
+    expect(rental.lateHours).toBe(0);
   });
 
   test("calculate cost", () => {

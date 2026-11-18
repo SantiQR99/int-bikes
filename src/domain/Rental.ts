@@ -12,6 +12,7 @@ export type RentalData = {
   bikeType: BikeType;
   hours: number;
   pricePerHour: number;
+  lateHours: number;
 };
 
 export class Rental {
@@ -28,6 +29,7 @@ export class Rental {
     this.bikeType = data.bikeType;
     this.hours = data.hours;
     this.pricePerHour = data.pricePerHour;
+    this.lateHours = data.lateHours;
   }
 
   get customer(): string {
