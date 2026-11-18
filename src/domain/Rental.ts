@@ -92,7 +92,10 @@ export class Rental {
   }
 
   set lateHours(_value: number) {
-    // TODO: validar y guardar las horas de atraso
+    if (!Number.isFinite(_value) || _value < 0) {
+      throw new Error("Las horas de atraso deben ser un numero positivo.");
+    }
+    this._lateHours = _value;
   }
 
   cost(): number {
@@ -100,6 +103,7 @@ export class Rental {
   }
 
   toString(): string {
-    return `${this.bikeCode} (${BIKE_TYPE_LABELS[this.bikeType]}) - ${this.customer} - ${this.hours} h - $${this.cost()}`;
+    if(this.lateHours==0) return `${this.bikeCode} (${BIKE_TYPE_LABELS[this.bikeType]}) - ${this.customer} - ${this.hours} h - $${this.cost()}`;
+    return `${this.bikeCode} (${BIKE_TYPE_LABELS[this.bikeType]}) - ${this.customer} - ${this.hours} h - $${this.cost()} - Atraso: ${this.lateHours} h`;
   }
 }

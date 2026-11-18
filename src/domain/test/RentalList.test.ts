@@ -41,4 +41,35 @@ describe("RentalList", () => {
     list.add(rental);
     expect(list.totalIncome()).toBe(300);
   });
+
+  test("total late fees", () => {
+    rental.lateHours = 2;
+    list.add(rental);
+    expect(list.totalLateFees()).toBe(400);
+  });
+
+  test("total late fees with no late fees", () => {
+    list.add(rental);
+    expect(list.totalLateFees()).toBe(0);
+  });
+
+  test("Remove bike", () => {
+    list.add(rental);
+    list.remove("B-123");
+    expect(list.getItems()).toStrictEqual([]);
+  });
+
+  test("Remove with no bikes", () => {
+    expect(() => list.remove("B-156")).toThrow();
+  });
+
+  test("Remove bike code that isnt on the list", () => {
+    list.add(rental);
+    expect(() => list.remove("B-156")).toThrow();
+  });
+
+  test("Remove with invalid bike code", () => {
+    list.add(rental);
+    expect(() => list.remove("B-ñji156")).toThrow();
+  });
 });
